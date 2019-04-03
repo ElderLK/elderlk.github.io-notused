@@ -104,10 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
-    var chatRequestPage = 'Payment';
-    embedded_svc.addCustomDetail('ChatRequestPage',
-    chatRequestPage).saveToTranscript('chatRequestPage__c');
-
+    
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = 'pt-BR'; //For example, enter 'en' or 'en-US'
 
@@ -144,7 +141,12 @@ h1, h2, h3, h4, h5, h6 {
     },{
       "label":"Email", 
       "transcriptFields": ["Email__c"]
-    }];  
+    },{
+      "label": "ChatRequestPage",
+      "value": "meuSite",
+      "displayToAgent": false,
+      "transcriptFields": ["chatRequestPage__c"]
+    },];  
 
 		embedded_svc.init(
 			'https://cs63.salesforce.com',
